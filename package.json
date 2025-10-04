@@ -5,7 +5,7 @@
   "exports": "./index.js",
   "files": [
     "index.js",
-    "README.md"
+    "readme.md"
   ],
   "repository": "github:inzerosight/ZWUS",
   "keywords": [
