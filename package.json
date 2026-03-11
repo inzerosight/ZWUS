@@ -2,6 +2,7 @@
   "name": "zwus",
   "version": "2.2.0",
   "type": "module",
+  "license": "WTFPL",
   "exports": "./index.js",
   "files": [
     "index.js",
