@@ -6,7 +6,8 @@
   "exports": "./index.js",
   "files": [
     "index.js",
-    "readme.md"
+    "readme.md",
+    "license"
   ],
   "repository": "github:inzerosight/ZWUS",
   "keywords": [
