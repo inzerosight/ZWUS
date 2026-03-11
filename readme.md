@@ -2,7 +2,7 @@
 
 Zero Width Unicode Steganography — hide text inside invisible characters.
 
-`npm i zwus`
+`npm install zwus`
 
 ## Usage
 
