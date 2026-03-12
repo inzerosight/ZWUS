@@ -1,4 +1,4 @@
-# ZWUS
+# Zero Width Unicode Standard (ZWUS)
 
 Zero Width Unicode Steganography — hide text inside invisible characters.
 
