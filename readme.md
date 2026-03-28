@@ -36,6 +36,11 @@ Decode must match the encode base:
 zwus.decodeToString(encoded, 6)
 ```
 
+## Interop
+
+Encoded output is byte-identical to the [Rust crate](https://crates.io/crates/zwus), so you can encode in JS and decode in Rust or vice versa.
+
 ## License
 
 [WTFPL](license)
+
