@@ -1,0 +1,1 @@
+For publishing to npm use env var NPM_TOKEN
