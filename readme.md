@@ -4,6 +4,10 @@ Zero Width Unicode Steganography — hide text inside invisible characters.
 
 `npm install zwus`
 
+## Browser Extension
+
+Use ZWUS in your browser with [inØsight](https://github.com/inzerosight/inzerosight): [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/in0sight/) · [Chrome Web Store](https://chromewebstore.google.com/detail/acnmohbphjmnbaboacmecidopeplkhog)
+
 ## Usage
 
 ```js
