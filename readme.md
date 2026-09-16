@@ -25,8 +25,8 @@ const decoded = zwus.decodeToNumberArray(encoded);
 Higher base = shorter output, but more likely visible in some renderers.
 
 ```js
-zwus.encodeString("hi", 3)  // default, safest
-zwus.encodeString("hi", 6)  // compact
+zwus.encodeString("hi", 3)  // safest
+zwus.encodeString("hi", 6)  // default, compact
 zwus.encodeString("hi", 8)  // most compact
 ```
 

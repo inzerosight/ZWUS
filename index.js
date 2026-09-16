@@ -8,33 +8,33 @@ const zwus = {
     /**
      * Encodes a string into a sequence of zero-width characters.
      * @param {string} text - The input text to encode.
-     * @param {number} base - The numerical base for encoding. Options: 3, 6, 8. Larger the base, the smaller the output, but the more likely the zero width will be detectable by sight.
+     * @param {number} base - The numerical base for encoding. Defaults to 6. Options: 3, 6, 8. Larger the base, the smaller the output, but the more likely the zero width will be detectable by sight.
      * @returns {string} The encoded string.
      */
-    encodeString: (text, base = 3) => Array.from(text, u => u.codePointAt(0).toString(base).split('').map(x => zwus[base][x]).join('')).join(zwus[base].unifier),
+    encodeString: (text, base = 6) => Array.from(text, u => u.codePointAt(0).toString(base).split('').map(x => zwus[base][x]).join('')).join(zwus[base].unifier),
     /**
      * Encodes an array of numbers into a sequence of zero-width characters.
      * @param {Array<number>} arr - The array of numbers to encode.
-     * @param {number} base - The numerical base for encoding. Options: 3, 6, 8. Larger the base, the smaller the output, but the more likely the zero width will be detectable by sight.
+     * @param {number} base - The numerical base for encoding. Defaults to 6. Options: 3, 6, 8. Larger the base, the smaller the output, but the more likely the zero width will be detectable by sight.
      * @returns {string} The encoded array.
      */
-    encodeNumberArray: (arr, base = 3) => arr.map(n => n.toString(base).split('').map(x => zwus[base][x]).join('')).join(zwus[base].unifier),
+    encodeNumberArray: (arr, base = 6) => arr.map(n => n.toString(base).split('').map(x => zwus[base][x]).join('')).join(zwus[base].unifier),
     /**
      * Decodes a string of zero-width characters back into the original string.
      * NOTE: Decoding accuracy is contingent upon the original encoding base and alphabet.
      * @param {string} text - The encoded text to decode.
-     * @param {number} base - The numerical base for decoding. Must match the base used for encoding.
+     * @param {number} base - The numerical base for decoding. Defaults to 6. Must match the base used for encoding.
      * @returns {string} The decoded string.
      */
-    decodeToString: (text, base = 3) => text.split(zwus[base].unifier).map(x => String.fromCodePoint(parseInt(Array.from(x).map(z => Object.keys(zwus[base]).find(k => zwus[base][k] === z)).join(''), base))).join(''),
+    decodeToString: (text, base = 6) => text.split(zwus[base].unifier).map(x => String.fromCodePoint(parseInt(Array.from(x).map(z => Object.keys(zwus[base]).find(k => zwus[base][k] === z)).join(''), base))).join(''),
     /**
      * Decodes a string of zero-width characters back into the original array of numbers.
      * NOTE: Decoding accuracy is contingent upon the original encoding base and alphabet.
      * @param {string} text - The encoded text to decode.
-     * @param {number} base - The numerical base for decoding. Must match the base used for encoding.
+     * @param {number} base - The numerical base for decoding. Defaults to 6. Must match the base used for encoding.
      * @returns {Array<number>} The decoded array of numbers.
      */
-    decodeToNumberArray: (text, base = 3) => text.split(zwus[base].unifier).map(x => parseInt(Array.from(x).map(z => Object.keys(zwus[base]).find(k => zwus[base][k] === z)).join(''), base)),
+    decodeToNumberArray: (text, base = 6) => text.split(zwus[base].unifier).map(x => parseInt(Array.from(x).map(z => Object.keys(zwus[base]).find(k => zwus[base][k] === z)).join(''), base)),
 };
 
 export default zwus;
