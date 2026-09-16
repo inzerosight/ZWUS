@@ -22,19 +22,21 @@ const decoded = zwus.decodeToNumberArray(encoded);
 
 ### Base
 
-Higher base = shorter output, but more likely visible in some renderers.
+Base 7 ranks printable ASCII so common English characters use one or two digits. Base 6 keeps Unicode code points as numbers. Some platforms strip particular zero-width characters.
 
 ```js
 zwus.encodeString("hi", 3)  // safest
-zwus.encodeString("hi", 6)  // default, compact
-zwus.encodeString("hi", 8)  // most compact
+zwus.encodeString("hi", 6)  // code point encoding
+zwus.encodeString("hi", 7)  // default, compact for ordinary English text
 ```
 
 Decode must match the encode base:
 
 ```js
-zwus.decodeToString(encoded, 6)
+zwus.decodeToString(zwus.encodeString("hi", 7), 7)
 ```
+
+Number arrays use ordinary base digits in every standard. Base 7's frequency ranking applies only to strings. Decoding ignores visible text mixed into a payload.
 
 ## Interop
 
